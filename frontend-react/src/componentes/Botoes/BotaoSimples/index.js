@@ -3,7 +3,7 @@ import styled from "styled-components";
 const BotaoSimples = styled.button`
     background: none;
     border: none;
-    color: #004A33;
+    color: rgb(3, 48, 116);
     padding: 0;
     font-size: 12px;
     cursor: pointer;

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from '../src/rotas/Home';
-import { createGlobalStyle } from 'styled-components'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { createGlobalStyle } from 'styled-components';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './rotas/Home';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -30,12 +30,14 @@ const GlobalStyle = createGlobalStyle`
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <GlobalStyle>
+  <>
+    <GlobalStyle />
     <BrowserRouter>
       <Routes>
-        <Route path='/' element = {<Home />} />
+        <Route path='/' element={<Home />} />
       </Routes>
     </BrowserRouter>
-    </GlobalStyle>
+  </>
 );
+
 

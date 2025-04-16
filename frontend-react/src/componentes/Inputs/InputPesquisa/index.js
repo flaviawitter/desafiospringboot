@@ -9,18 +9,18 @@ const InputContainer = styled.div`
 
 const Input = styled.input`
     background: transparent;
-    border: 1px solid #004A33;
+    border: 1px solid rgb(3, 48, 116);
     padding: 10px 10px 10px 35px;
     border-radius: 25px;
     width: 280px;
     height: 7.5px;
-    color: #004A33;
+    color: rgb(3, 48, 116);
     font-size: 12px;
     margin-bottom: 10px;
     margin-top: 30px;
 
     &::placeholder {
-        color: #004A33;
+        color: rgb(3, 48, 116);
         font-size: 10px;
     }
 `;
@@ -61,14 +61,14 @@ const InputPesquisa = () => {
         <InputContainer>
             <Input
                 type="text"
-                placeholder="Busque seu novo livro!"
+                placeholder="Pesquise o cliente por nome ou CPF"
                /* value={valor}
                 onChange={handleChange}
                 onKeyDown={(e) => e.key === "Enter" && handleClick()} // Chama handleLogin ao pressionar Enter*/
             />
-            <BotaoLupa>
+           {/* <BotaoLupa>
                 <img src={lupa} alt="Buscar" />
-            </BotaoLupa>
+            </BotaoLupa>*/}
         </InputContainer>
     );
 }

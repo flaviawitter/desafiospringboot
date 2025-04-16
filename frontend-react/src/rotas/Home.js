@@ -6,7 +6,7 @@ import PagPrincipal from '../componentes/PagPrincipal';
 const AppContainer = styled.div`
     width: 100vw;
     height: 100vh;
-    background-color: #ffff; 
+    background-color: #ffffff; 
 `
 
 function App() {

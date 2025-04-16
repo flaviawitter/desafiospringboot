@@ -10,7 +10,7 @@ const NovidadesContainer = styled.section`
 `
 
 const Titulo = styled.h2`
-    color: #095F54;
+    color: rgb(3, 48, 116);
     font-size: 32px;
     text-align: left;
     width: 100%;
@@ -36,14 +36,14 @@ const Resultado = styled.div`
     }
 `
 
-function Novidades() {
+function PagPrincipal() {
   
     return (
         <NovidadesContainer>
-            <Titulo style={{ fontFamily: "Bookochi", letterSpacing: "0.22em"  }}>NOVIDADES</Titulo>
+            <Titulo style={{ fontFamily: "Bookochi", letterSpacing: "0.22em"  }}>CLIENTES CADASTRADOS</Titulo>
             <DadosCliente />
         </NovidadesContainer>
     );
 }
 
-export default Novidades;
+export default PagPrincipal;
