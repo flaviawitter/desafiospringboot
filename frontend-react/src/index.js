@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './rotas/Home';
+import Home from './componentes/PagPrincipal/index';
+import Contatos from './componentes/PagContatos/index';
+import { ToastProvider } from '../src/componentes/Toast/ToastContext';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -31,12 +33,15 @@ const GlobalStyle = createGlobalStyle`
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
+    <ToastProvider>
     <GlobalStyle />
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/contatos/:clienteid' element={<Contatos />} />
       </Routes>
     </BrowserRouter>
+    </ToastProvider>
   </>
 );
 
