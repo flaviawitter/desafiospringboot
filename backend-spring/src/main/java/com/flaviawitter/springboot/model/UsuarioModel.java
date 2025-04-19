@@ -26,7 +26,7 @@ public class UsuarioModel {
     public String nome;
 
     @Column(nullable = false, unique = true)
-    public String cpf;  // Campo CPF obrigatório e único
+    public String cpf;  
 
     @Column(nullable = true)
     public String endereco; 

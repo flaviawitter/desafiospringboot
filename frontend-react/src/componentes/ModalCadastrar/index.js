@@ -75,7 +75,7 @@ function ModalCadastrar({ onClose, onSave }) {
     if (form.dataNascimento) {
       const dataNascimento = new Date(form.dataNascimento);
       const hoje = new Date();
-      hoje.setHours(0, 0, 0, 0); // Remove horas para comparação precisa
+      hoje.setHours(0, 0, 0, 0); 
   
       
       if (dataNascimento > hoje) {
@@ -96,7 +96,7 @@ function ModalCadastrar({ onClose, onSave }) {
   
       const payload = {
         ...form,
-        dataNascimento: form.dataNascimento, // já está no formato yyyy-MM-dd
+        dataNascimento: form.dataNascimento, 
         dataCadastro: format(new Date(), 'yyyy-MM-dd')
       };
   

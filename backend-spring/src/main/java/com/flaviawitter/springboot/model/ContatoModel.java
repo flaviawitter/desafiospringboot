@@ -11,20 +11,19 @@ public class ContatoModel {
     public int codigo;
 
     @Column(nullable = false)
-    public String tipo;  // Ex: "email", "telefone"
+    public String tipo;  
 
     @Column(nullable = false)
-    public String valor;  // Ex: "joao@email.com", "99999-9999"
+    public String valor;
 
     @Column
-    public String observacao;  // Opcional
+    public String observacao;  
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
     @JsonIgnore
     private UsuarioModel usuarioModel;
 
-    // Getters e Setters
 
     public int getCodigo() {
         return this.codigo;

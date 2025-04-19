@@ -1,12 +1,14 @@
 import styled from "styled-components"
 
 const Input = styled.input.attrs(props => ({
-  type: 'text',         // Se quiser forçar tipo 'text'
+  type: 'text',         
   id: props.id,
   value: props.value,
   onChange: props.onChange,
   placeholder: props.placeholder || ''
-}))`
+}))
+
+`
   background-color: #CACACA;
   backdrop-filter: blur(10px);
   border: 1px solid rgb(3, 48, 116);

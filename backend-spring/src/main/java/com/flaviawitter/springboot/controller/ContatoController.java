@@ -43,7 +43,7 @@ public class ContatoController {
                     })
                     .orElseThrow(() -> new RuntimeException("Usuário com ID " + id + " não encontrado"));
         } catch (Exception e) {
-            e.printStackTrace(); // Mostra o erro no console
+            e.printStackTrace();
             throw new RuntimeException("Erro ao cadastrar contato: " + e.getMessage());
         }
     }
@@ -53,11 +53,10 @@ public class ContatoController {
     public ContatoModel alterarContato(@PathVariable Integer codigo, @RequestBody ContatoModel contatoAtualizado){
         return contatoRepository.findById(codigo)
             .map(contatoExistente -> {
-                // Atualiza os campos modificáveis
                 contatoExistente.setTipo(contatoAtualizado.getTipo());
                 contatoExistente.setValor(contatoAtualizado.getValor());
                 contatoExistente.setObservacao(contatoAtualizado.getObservacao());
-                // ⚠️ Não remove o vínculo com o usuário
+                
                 return contatoRepository.save(contatoExistente);
             })
             .orElse(null);

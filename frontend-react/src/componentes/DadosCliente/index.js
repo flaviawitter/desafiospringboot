@@ -7,7 +7,7 @@ import ModalEditar from '../ModalEditar';
 import DadosContato from '../DadosContato';
 import axios from 'axios';
 import { format } from 'date-fns';
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useToast } from '../Toast/ToastContext';
 
 const Container = styled.section`

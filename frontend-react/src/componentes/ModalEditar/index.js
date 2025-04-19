@@ -84,11 +84,10 @@ function ModalEditar({ cliente, onClose, onSave }) {
       return;
     }
   
-    // Verifica se a data de nascimento está no futuro
     if (form.dataNascimento) {
       const dataNascimento = new Date(form.dataNascimento);
       const hoje = new Date();
-      hoje.setHours(0, 0, 0, 0); // Remove horas para comparação precisa
+      hoje.setHours(0, 0, 0, 0); 
   
       if (dataNascimento > hoje) {
         showToast('A data de nascimento não pode ser no futuro', 'alert');

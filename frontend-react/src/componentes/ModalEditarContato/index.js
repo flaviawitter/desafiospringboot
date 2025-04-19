@@ -89,7 +89,7 @@ function ModalEditarContato({ contato, onClose, onSave }) {
         `http://localhost:8080/api/contato/alterarContato/${contato.codigo}`,
         {
           ...form,
-          usuarioModel: { id: contato.usuarioModel?.id || contato.usuarioModel } // garante que envie o relacionamento
+          usuarioModel: { id: contato.usuarioModel?.id || contato.usuarioModel }
         }
       );
       onSave(response.data);

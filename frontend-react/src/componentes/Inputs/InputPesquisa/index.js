@@ -5,7 +5,6 @@ const InputContainer = styled.div`
   position: relative;
   width: 300px;
 `;
-
 const Input = styled.input`
   background: transparent;
   border: 1px solid rgb(3, 48, 116);
@@ -27,22 +26,21 @@ const Input = styled.input`
 const InputPesquisa = ({ query, onSearch }) => {
     const [valorInput, setValorInput] = useState(query);
   
-    // Atualiza o valorInput sempre que o 'query' mudar no componente pai
     useEffect(() => {
       setValorInput(query);
     }, [query]);
   
     const handleChange = (e) => {
       const valor = e.target.value;
-      setValorInput(valor); // Atualiza o valor local
+      setValorInput(valor); 
       if (valor.length > 0 || valor.length === 0) {
-        onSearch(valor); // Chama a função de busca com o valor atual
+        onSearch(valor); 
       }
     };
   
     const handleKeyPress = (e) => {
       if (e.key === 'Enter') {
-        onSearch(valorInput); // Chama a busca ao pressionar Enter
+        onSearch(valorInput); 
       }
     };
   

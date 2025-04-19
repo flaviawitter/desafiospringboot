@@ -32,29 +32,25 @@ public class UsuarioController {
             return repository.findAll();
         }
 
-        // Se for apenas número, busca por CPF (parcial)
         if (nomeCpf.matches("\\d+")) {
             return repository.findByCpfContaining(nomeCpf);
         }
 
-        // Caso contrário, busca por nome (parcial)
         return repository.findByNomeContainingIgnoreCase(nomeCpf);
     }
 
     @PostMapping(path = "/cadastrarCliente")
     @ResponseStatus(HttpStatus.CREATED)
     public UsuarioModel cadastrarClientes(@RequestBody UsuarioModel cliente) {
-        // Validação de campos obrigatórios
+        
         if (cliente.getNome() == null || cliente.getCpf() == null) {
             throw new IllegalArgumentException("Nome e CPF são obrigatórios");
         }
 
-        // Verifica se o CPF já existe no banco
         if (repository.findByCpf(cliente.getCpf()).isPresent()) {
             throw new IllegalArgumentException("CPF já cadastrado");
         }
 
-        // Verifica se a data de nascimento está no futuro
         if (cliente.getDataNascimento().isAfter(LocalDate.now())) {
             throw new IllegalArgumentException("Data de nascimento não pode ser no futuro");
         }
@@ -69,7 +65,6 @@ public class UsuarioController {
             cliente.setId(id);
             return repository.save(cliente);
        }
-       // Verifica se a data de nascimento está no futuro
        if (cliente.getDataNascimento().isAfter(LocalDate.now())) {
             throw new IllegalArgumentException("Data de nascimento não pode ser no futuro");
         }

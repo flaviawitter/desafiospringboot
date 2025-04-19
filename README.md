@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+📒 Sistema de Gestão de Clientes – Comércio S.A.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto tem como objetivo realizar a gestão de contatos da empresa Comércio S.A., através de um sistema digital eficiente e organizado.
 
-## Available Scripts
 
-In the project directory, you can run:
+📌 Descrição do Projeto
 
-### `npm start`
+O sistema permite o cadastro, edição, exclusão, listagem e busca de clientes, assim como a gestão de seus respectivos contatos (como telefones e e-mails).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✅ Funcionalidades
 
-### `npm test`
+Clientes:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+• RF01: O sistema deve permitir o cadastro de clientes com os seguintes dados: Nome, CPF, Data de Nascimento e Endereço; 
+• RF02: O sistema deve permitir a edição dos dados de um cliente cadastrado; 
+• RF03: O sistema deve permitir a exclusão de um cliente cadastrado; 
+• RF04: O sistema deve permitir a listagem de todos os clientes cadastrados; 
+• RF05: O sistema deve permitir a busca de um cliente pelo Nome ou CPF.
 
-### `npm run build`
+Contatos
+• RF06: O sistema deve permitir o cadastro de contatos para um cliente, contendo os seguintes dados: Tipo do Contato (Telefone, E-mail), Valor do Contato (número ou email) e Observação; 
+• RF07: O sistema deve permitir a edição dos contatos de um cliente;
+• RF08: O sistema deve permitir a exclusão de um contato de um cliente; 
+• RF09: O sistema deve permitir a listagem de todos os contatos de um cliente específico. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📋 Regras de Negócio
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+• RN01: Os campos Nome e CPF são obrigatórios no cadastro do cliente; 
+• RN02: Os campos Tipo do Contato e Valor do Contato são obrigatórios no cadastro do contato; 
+• RN03: O CPF informado deve ser único no sistema; 
+• RN04: O Nome do cliente não pode estar vazio; 
+• RN05: A Data de Nascimento deve ser válida; 
+• RN06: Um cliente pode ter mais de um contato cadastrado; 
+• RN07: Ao excluir um cliente, todos os seus contatos devem ser removidos do sistema; 
+• RN08: O sistema deve validar os dados informados antes de permitir o cadastro ou edição.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🛠️ Tecnologias Utilizadas
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Frontend: React, Styled Components, Input Mask
+Backend: Java, Spring Boot, Maven
+Banco de Dados: MySQL
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🚀 Como Executar o Projeto
 
-## Learn More
+Pré-requisitos:
+• npm ou yarn
+• Java 17 ou superior
+• Maven
+• MySQL (ou outro, caso prefira)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Passo a passo:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+• Banco de Dados:
+# Configure o nome do usuário, senha e nome do banco no arquivo 'application.properties'
+spring.datasource.url=jdbc:mysql://localhost:3306/NOME_BANCO
+spring.datasource.username=USUÁRIO
+spring.datasource.password=SENHA
 
-### Code Splitting
+# Rode o MySQL e crie o banco de dados
+CREATE DATABASE NOME_BANCO
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Caso esteja utilizando outro banco de dados que não o MySQL é necessário que seja atualizado na linha 1 do arquivo 'application.properties'
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+• Backend:
+# Navegue até o diretório do backend
+cd backend-spring
 
-### Making a Progressive Web App
+# Compile o projeto
+mvn clean install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Execute a aplicação
+mvn spring-boot:run
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+• Frontend: 
+# Navegue até o diretório do frontend
+cd frontend-react
 
-### Deployment
+# Instale as dependências
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Inicie o projeto
+npm start
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📄 Licença
+
+Este projeto é de uso interno da empresa Comércio S.A.
