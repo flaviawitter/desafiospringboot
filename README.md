@@ -46,7 +46,7 @@ Banco de Dados: MySQL
 
 🚀 Como Executar o Projeto
 
-Pré-requisitos:
+#Pré-requisitos:
 • npm ou yarn
 • Java 17 ou superior
 • Maven
@@ -55,36 +55,36 @@ Pré-requisitos:
 Passo a passo:
 
 • Banco de Dados:
-# Configure o nome do usuário, senha e nome do banco no arquivo 'application.properties'
+1.Configure o nome do usuário, senha e nome do banco no arquivo 'application.properties'
 spring.datasource.url=jdbc:mysql://localhost:3306/NOME_BANCO
 spring.datasource.username=USUÁRIO
 spring.datasource.password=SENHA
 
-# Rode o MySQL e crie o banco de dados
+2.Rode o MySQL e crie o banco de dados
 CREATE DATABASE NOME_BANCO
 
-# Caso esteja utilizando outro banco de dados que não o MySQL é necessário que seja atualizado na linha 1 do arquivo 'application.properties'
+Obs.: Caso esteja utilizando outro banco de dados que não o MySQL é necessário que seja atualizado na linha 1 do arquivo 'application.properties'
 
 
 • Backend:
-# Navegue até o diretório do backend
+1.Navegue até o diretório do backend
 cd backend-spring
 
-# Compile o projeto
+2.Compile o projeto
 mvn clean install
 
-# Execute a aplicação
+3.Execute a aplicação
 mvn spring-boot:run
 
 
 • Frontend: 
-# Navegue até o diretório do frontend
+1.Navegue até o diretório do frontend
 cd frontend-react
 
-# Instale as dependências
+2.Instale as dependências
 npm install
 
-# Inicie o projeto
+3.Inicie o projeto
 npm start
 
 
